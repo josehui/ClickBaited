@@ -19,7 +19,8 @@ const create = async () => {
 
     // configure nonFeature
     app.use(ignoreFavicon);
-
+    app.use(express.urlencoded({extended: true}));
+    app.use(express.json())
     app.use(express.static('public'));
 
     // root route - serve static file
@@ -30,6 +31,12 @@ const create = async () => {
     app.get('/clickbait', (req, res) => {
         const clickbaitTitle = clickbait();
         res.send(clickbaitTitle);
+    });
+
+    app.post('/submit', (req, res) => {
+        console.log("received submission");
+        console.log(req.body.title);
+        res.json({ status: 'Clickbait saved' });
     });
 
     // Error handler

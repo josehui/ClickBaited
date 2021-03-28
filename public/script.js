@@ -66,6 +66,21 @@ function clickbait(){
   //+"<footer><cite>"+author+"</cite></footer></blockquote>");
 } 
 
+function submitClickbait() {
+  let title = $("#clickbaitInput").val()
+  if (title.length > 0){
+    $.post("/submit", {title: title}).done((res) => {
+      console.log('submited');
+      $("#clickbaitInput").val("")
+    } 
+    );
+  }
+}
+
+$("#clickbaitForm").submit(function(e) {
+  e.preventDefault();
+});
+
 $(document).ready(function(){
   clickbait(); // Writes random quote on page load
   
@@ -73,9 +88,12 @@ $(document).ready(function(){
   document.getElementById("clickbait").onclick=function(){
   $('blockquote').removeClass('fadeIn').addClass('fadeOut')
   setTimeout(clickbait(), 1500);
-    
-};
+  };
+  document.getElementById("submit").onclick=function(){
+    setTimeout(submitClickbait(), 1500);
+  };
 });
+
 
 // Allow links
 $('a').attr("onclick","window.open(this.href); return false;");

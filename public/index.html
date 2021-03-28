@@ -9,18 +9,30 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
+
 <section class="fullscreen"><div class="container-fluid">
   <div class="row">
     <div class="quote-container text-center">
       <div id="quote">
-      <blockquote class="animated fadeIn"> Oh no! Smething went wrong. Try reloading the page :)
+      <!-- <blockquote class="animated fadeIn"> Oh no! Smething went wrong. Try reloading the page :) -->
         <footer><cite>Clickbait Generator</cite></footer>
         </blockquote> </div>
     </div>
     <div class="text-center"><a class="btn btn-default btn-md animated pulse" id="clickbait">我要Clickbait!</a><br/><br/> 
     </div>
   </div>
-</div>
+  <div class="row">
+    <form id="clickbaitForm">
+    <div class="input-group">
+      <input type="text" class="form-control" id="clickbaitInput" placeholder="集思廣益，share下你見過咩Clickbait" required="true">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit" id="submit">Submit!</button>
+      </span>
+      <!-- <button class="btn btn-default" type="submit" id="submit">Submit!</button> -->
+    </div><!-- /input-group -->
+  </form>
+  </div>
+
 </section>
 <footer class="footer">
 
