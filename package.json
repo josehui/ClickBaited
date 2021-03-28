@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles --coverage",
     "start:dev": "nodemon --exec npm start",
-    "start": "npm run lint && node src/index.js --unhandled-rejections=warn",
+    "start": "node src/index.js --unhandled-rejections=warn",
     "lint": "eslint src/**/*.js --fix"
   },
   "repository": {

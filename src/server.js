@@ -1,5 +1,6 @@
 const express = require('express');
-const path = require('path');
+// const path = require('path');
+const clickbait = require('./func/clickbait');
 
 // ignore request for FavIcon. so there is no error in browser
 const ignoreFavicon = (req, res, next) => {
@@ -8,6 +9,7 @@ const ignoreFavicon = (req, res, next) => {
     }
     next();
 };
+
 
 // fn to create express server
 const create = async () => {
@@ -18,9 +20,16 @@ const create = async () => {
     // configure nonFeature
     app.use(ignoreFavicon);
 
+    app.use(express.static('public'));
+
     // root route - serve static file
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/client.html'));
+    // app.get('/', (req, res) => {
+    //     res.sendFile(path.join(__dirname, '../public/client.html'));
+    // });
+
+    app.get('/clickbait', (req, res) => {
+        const clickbaitTitle = clickbait();
+        res.send(clickbaitTitle);
     });
 
     // Error handler
@@ -31,6 +40,7 @@ const create = async () => {
     });
     return app;
 };
+
 
 module.exports = {
     create

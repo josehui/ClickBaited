@@ -1,0 +1,48 @@
+body{
+    background: #DC2424; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #DC2424 , #4A569D); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #DC2424 , #4A569D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.fullscreen{
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+.btn{
+  font-weight: 100;
+  letter-spacing: 3px;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
+.btn-primary{
+  padding: 5px 10px;
+}
+.quote-container{
+  margin: 0 10% 0 10%;
+}
+blockquote, cite, blockquote footer{
+  color: #fff;
+}
+blockquote{
+   border: 5px solid #eee;
+  padding: 1.5em 3em;
+}
+blockquote footer{
+  margin-top: 10px;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: rgba(256,256,256,0.6);
+  background-color: rgba(0,0,0,0.3);
+}
+.rowmar{
+  margin-left:auto;
+  margin-right: auto;
+}
+.colpad{
+  padding: 10px;
+}
